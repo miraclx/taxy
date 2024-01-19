@@ -1,5 +1,5 @@
 # Use the official Rust image as the base image for the builder stage
-FROM rust:latest as builder
+FROM rust:slim-bookworm as builder
 
 # Install trunk
 RUN cargo install trunk
