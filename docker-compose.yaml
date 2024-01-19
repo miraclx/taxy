@@ -1,0 +1,20 @@
+version: "3"
+services:
+  taxy:
+    image: ghcr.io/picohz/taxy:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: taxy
+    network_mode: host
+    volumes:
+      - taxy-config:/root/.config/taxy
+    # ports:
+    #   # Add ports here if you want to expose them to the host
+    #   - 80:80
+    #   - 443:443
+    #   - 127.0.0.1:46492:46492 # Admin panel
+    restart: unless-stopped
+
+volumes:
+  taxy-config:
